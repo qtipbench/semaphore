@@ -39,6 +39,7 @@ func main() {
 	fmt.Printf("Tmp Path (projects home) %v\n", util.Config.TmpPath)
 
 	if err := db.Connect(); err != nil {
+		fmt.Println("\n Have you run semaphore -setup?")
 		panic(err)
 	}
 
@@ -71,7 +72,7 @@ func doSetup() int {
  1. Set up configuration for a MySQL/MariaDB database
  2. Set up a path for your playbooks (auto-created)
  3. Run database Migrations
- 4. Set up initial seamphore user & password
+ 4. Set up initial semaphore user & password
 
 `)
 
